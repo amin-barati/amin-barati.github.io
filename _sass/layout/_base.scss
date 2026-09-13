@@ -5,8 +5,33 @@ html {
   /* sticky footer fix */
   position: relative;
   min-height: 100%;
-  
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;     
+   scroll-padding-top: 90px;
+}
+
+/* Prevent sticky header from covering section headings when using anchor links */
+/* Anchor offset for sticky navigation */
+#education,
+#research,
+#publications,
+#skills,
+#experiences,
+#contact {
+  position: relative;
+}
+
+#education::before,
+#research::before,
+#publications::before,
+#skills::before,
+#experiences::before,
+#contact::before {
+  content: "";
+  display: block;
+  height: 90px;
+  margin-top: -90px;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 body {
